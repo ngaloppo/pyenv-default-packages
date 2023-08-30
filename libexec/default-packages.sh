@@ -12,7 +12,7 @@ install_default_packages() {
     args=( -r "$requirements_file" )
 
     # Invoke `pip install` in the just-installed Python.
-    PYENV_VERSION="$installed_version" pyenv-exec pip install "${args[@]}" || {
+    PYENV_VERSION="$installed_version" pyenv-exec pip install -U "${args[@]}" || {
       echo "pyenv: error installing packages from  \`$requirements_file'"
     } >&2
   fi
